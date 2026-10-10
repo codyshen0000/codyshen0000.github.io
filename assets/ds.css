@@ -46,6 +46,8 @@
   --ds-accent-active: #006edb;
   --ds-accent-soft: rgba(0, 113, 227, 0.1);
   --ds-accent-ink: #ffffff;
+  --ds-link-pill-bg: rgba(0, 0, 0, 0.05);
+  --ds-link-pill-bg-hover: rgba(0, 0, 0, 0.09);
 
   --ds-radius-sm: 12px;
   --ds-radius-md: 18px;
@@ -99,6 +101,8 @@
     --ds-accent-active: #1484f0;
     --ds-accent-soft: rgba(41, 151, 255, 0.16);
     --ds-accent-ink: #000000;
+    --ds-link-pill-bg: rgba(255, 255, 255, 0.08);
+    --ds-link-pill-bg-hover: rgba(255, 255, 255, 0.14);
     --ds-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.28);
     --ds-shadow-2: 0 4px 16px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.28);
     --ds-shadow-3: 0 12px 40px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.32);
@@ -125,6 +129,8 @@
   --ds-accent-active: #1484f0;
   --ds-accent-soft: rgba(41, 151, 255, 0.16);
   --ds-accent-ink: #000000;
+  --ds-link-pill-bg: rgba(255, 255, 255, 0.08);
+  --ds-link-pill-bg-hover: rgba(255, 255, 255, 0.14);
   --ds-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.28);
   --ds-shadow-2: 0 4px 16px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.28);
   --ds-shadow-3: 0 12px 40px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.32);
@@ -150,6 +156,8 @@
   --ds-accent-active: #006edb;
   --ds-accent-soft: rgba(0, 113, 227, 0.1);
   --ds-accent-ink: #ffffff;
+  --ds-link-pill-bg: rgba(0, 0, 0, 0.05);
+  --ds-link-pill-bg-hover: rgba(0, 0, 0, 0.09);
   --ds-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.04);
   --ds-shadow-2: 0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
   --ds-shadow-3: 0 12px 40px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.06);
@@ -567,6 +575,94 @@ html.ds-page body {
 .ds-btn-ghost:hover {
   border-color: var(--ds-accent);
   color: var(--ds-accent) !important;
+}
+
+/* ---- link pills ----
+   Soft filled chips for icon+label outbound/nav links.
+   Use .ds-link-pills on the row and .ds-link-pill (alias: .link-pill) on each <a>.
+   Optional .ds-link-pill-accent for the primary item. */
+.ds-link-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ds-link-pills > li {
+  display: flex;
+  margin: 0;
+}
+
+.ds-link-pill,
+.link-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-sizing: border-box;
+  height: 36px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: var(--ds-radius-pill);
+  background: var(--ds-link-pill-bg);
+  color: var(--ds-text) !important;
+  font-family: var(--ds-font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.011em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 150ms var(--ds-ease), color 150ms var(--ds-ease), transform 150ms var(--ds-ease);
+}
+
+.ds-link-pill:hover,
+.link-pill:hover {
+  background: var(--ds-link-pill-bg-hover);
+  color: var(--ds-accent) !important;
+}
+
+.ds-link-pill:active,
+.link-pill:active {
+  transform: scale(0.98);
+}
+
+.ds-link-pill:focus-visible,
+.link-pill:focus-visible {
+  outline: 2px solid var(--ds-accent);
+  outline-offset: 3px;
+}
+
+.ds-link-pill svg,
+.link-pill svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  display: block;
+  overflow: visible;
+}
+
+.ds-link-pill-accent,
+.link-pill-accent {
+  background: var(--ds-accent);
+  color: #fff !important;
+}
+
+.ds-link-pill-accent:hover,
+.link-pill-accent:hover {
+  background: var(--ds-accent-hover);
+  color: #fff !important;
+}
+
+.ds-link-pill-accent:active,
+.link-pill-accent:active {
+  background: var(--ds-accent-active);
+  color: #fff !important;
 }
 
 /* ---- tags / chips ---- */

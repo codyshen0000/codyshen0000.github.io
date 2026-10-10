@@ -67,6 +67,8 @@ One accent. Neutrals only besides that.
 | `--ds-text-tertiary` | `#86868b` | `#86868b` |
 | `--ds-accent` | `#0071e3` | `#2997ff` |
 | `--ds-accent-ink` | `#ffffff` | `#000000` |
+| `--ds-link-pill-bg` | `rgba(0,0,0,.05)` | `rgba(255,255,255,.08)` |
+| `--ds-link-pill-bg-hover` | `rgba(0,0,0,.09)` | `rgba(255,255,255,.14)` |
 | `--ds-hairline` | `rgba(0,0,0,.08)` | `rgba(255,255,255,.12)` |
 | `--ds-nav-bg` | `rgba(245,245,247,.72)` | `rgba(0,0,0,.72)` |
 
@@ -102,6 +104,7 @@ Prefix every class `ds-`. Compose; do not restyle these selectors from a generat
 | `.ds-btn` / `.ds-btn-fill` | filled pill |
 | `.ds-btn-link` | text + `›` |
 | `.ds-btn-ghost` | outlined pill |
+| `.ds-link-pills` + `.ds-link-pill` / `.link-pill` | soft-fill icon+label chips; `.ds-link-pill-accent` is the primary (blue fill, white text) |
 | `.ds-tag` / `.ds-chip` / `.ds-tag-outline` | chips |
 | `.ds-table-wrap` + `.ds-table` | tables |
 | `.ds-code` / `.ds-pre` | inline / block code |
@@ -109,6 +112,36 @@ Prefix every class `ds-`. Compose; do not restyle these selectors from a generat
 | `.ds-prose` | article measure (~70ch) |
 | `.ds-footer` + `.ds-footer-inner` | footer |
 | `.ds-muted` / `.ds-dim` | secondary / tertiary text |
+
+### Link pills
+
+Soft filled chips for a row of icon + label links (homepage contact/outbound row, or any similar strip). Do **not** reuse `.ds-btn-ghost` for this — that outlined control is a different weight.
+
+```html
+<ul class="ds-link-pills">
+  <li><a class="ds-link-pill" href="mailto:…">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">…</svg>
+    <span>Email</span>
+  </a></li>
+  <li><a class="ds-link-pill ds-link-pill-accent" href="/ai-frontier-trends/">…</a></li>
+</ul>
+```
+
+| Rule | Spec |
+| --- | --- |
+| Row | `flex-wrap`, `gap: 10px`, aligns with the text column it sits in |
+| Pill | height **36px**, padding `0 16px`, radius `--ds-radius-pill` (980px), **no border** |
+| Fill | `--ds-link-pill-bg` — `rgba(0,0,0,.05)` light / `rgba(255,255,255,.08)` dark |
+| Type | 15px / 500 / `--ds-font-sans` (SF Pro / -apple-system / PingFang SC) |
+| Icon | 16×16 SVG, `currentColor`, stroke **1.75**, `inline-flex` + `align-items: center` + `gap: 6px` |
+| Hover | 150ms; slightly darker fill + text → `--ds-accent` (`#0071e3` / `#2997ff`) |
+| Focus | `:focus-visible` 2px accent ring, 3px offset |
+| Active | `scale(.98)` |
+| Accent | `.ds-link-pill-accent` — accent fill, white text; hover uses `--ds-accent-hover` |
+
+`.link-pill` / `.link-pill-accent` are aliases of the `ds-` names so generated pages can use either.
+
+Icons should be one consistent Lucide / SF-like line set (mail, graduation-cap, github, file-text, trending-up). Do not mix filled marks with stroke icons.
 
 Mobile nav: `.ds-nav-menu` appears below 734px. Toggle `.is-open` on `.ds-nav` and `aria-expanded` on the button.
 

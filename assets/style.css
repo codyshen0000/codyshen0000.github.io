@@ -89,16 +89,8 @@
 .bio strong { font-weight: 600; }
 
 .links-row {
-  list-style: none;
-  padding: 0;
   margin: 22px 0 0;
 }
-.links-row .ds-btn-ghost {
-  height: 36px;
-  gap: 7px;
-  font-size: 13px;
-}
-.links-row svg { width: 15px; height: 15px; flex: none; }
 .intro .ds-quote { margin-top: 28px; max-width: 36em; }
 
 /* ---- news ---- */
