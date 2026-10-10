@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en">
+<html lang="en" class="ds-page" data-lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shen Sheng 沈盛 — Multimodal generation &amp; editing</title>
   <meta name="description" content="Shen Sheng (沈盛), AI Research Institute of Hithink RoyalFlush. Multimodal generation and editing; PhD from Tianjin University. Papers, code and news.">
-  <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0e1014" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="Shen Sheng 沈盛">
   <meta property="og:description" content="Multimodal generation &amp; editing — papers, code, news.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232b50ff'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' font-family='Georgia,serif' fill='white'%3E沈%3C/text%3E%3C/svg%3E">
-  <link rel="preload" href="assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230071e3'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' font-family='-apple-system,BlinkMacSystemFont,sans-serif' font-weight='600' fill='white'%3E沈%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/ds.css">
   <link rel="stylesheet" href="assets/style.css">
   <script>
     // set theme + language before first paint to avoid flashing
@@ -26,211 +24,231 @@
   </script>
 </head>
 <body>
-  <a class="skip" href="#main"><span class="en">Skip to content</span><span class="zh">跳到正文</span></a>
+  <a class="ds-skip skip" href="#main"><span class="en">Skip to content</span><span class="zh">跳到正文</span></a>
 
-  <header class="nav" id="nav">
-    <div class="nav-inner">
-      <a class="brand" href="#top" aria-label="沈盛 Shen Sheng"><span class="cn">沈盛</span><span class="en-name">Shen Sheng</span></a>
-      <nav aria-label="Primary">
+  <header class="ds-nav nav" id="nav">
+    <div class="ds-nav-inner">
+      <a class="ds-nav-brand brand" href="#top" aria-label="沈盛 Shen Sheng"><span class="cn">沈盛</span><span class="en-name">Shen Sheng</span></a>
+      <nav class="ds-nav-links" id="nav-links" aria-label="Primary">
         <a href="#news"><span class="en">News</span><span class="zh">动态</span></a>
         <a href="#papers"><span class="en">Papers</span><span class="zh">论文</span></a>
         <a href="#experience"><span class="en">Experience</span><span class="zh">经历</span></a>
-        <span class="sep" aria-hidden="true"></span>
+        <span class="ds-nav-sep sep" aria-hidden="true"></span>
         <a href="https://codyshen0000.github.io/blog/"><span class="en">Blog</span><span class="zh">博客</span></a>
         <a href="https://codyshen0000.github.io/ai-frontier-trends/"><span class="en">Trends</span><span class="zh">前沿趋势</span></a>
         <a href="https://codyshen0000.github.io/studio/"><span class="en">Dashboard</span><span class="zh">看板</span></a>
       </nav>
-      <div class="tools">
+      <div class="ds-nav-tools tools">
         <button id="lang" type="button" aria-label="Switch language / 切换语言"><span class="en">中文</span><span class="zh">EN</span></button>
         <button id="theme" type="button" aria-label="Toggle theme"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
+        <button class="ds-nav-menu" id="menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
       </div>
     </div>
   </header>
 
-  <main id="main" class="wrap">
+  <main id="main">
     <!-- INTRO: who, where, what, how to reach — all above the fold -->
-    <section class="intro" id="top">
-      <div class="avatar">
-        <canvas id="field"></canvas>
-        <span class="monogram">沈</span>
-        <img src="assets/img/avatar.jpg" alt="Shen Sheng" onerror="this.remove()">
-      </div>
-      <div class="intro-text">
-        <h1><span class="en">Shen Sheng <span class="alt">沈盛</span></span><span class="zh">沈盛 <span class="alt">Shen Sheng</span></span></h1>
-        <p class="role">
-          <span class="en">Hithink RoyalFlush AI Research Institute <span class="amp">&amp;</span> Postdoctoral Fellow, Zhejiang University <span class="muted">(advisor: Jiming Chen)</span></span>
-          <span class="zh">同花顺 AI 研究院 <span class="amp">&amp;</span> 浙江大学博士后 <span class="muted">（导师：陈积明）</span></span>
-        </p>
-        <p class="bio en">Current research interests: <strong>multimodal generation and editing</strong>. I received my PhD from Tianjin University in 2024, advised by Jingyu Yang and Huanjing Yue, and previously worked on AIGC and LLMs at Kunlun Tech, Qiyuan Lab and Baidu.</p>
-        <p class="bio zh">目前兴趣方向：<strong>多模态生成和编辑</strong>。2024 年博士毕业于天津大学，导师为杨敬钰、岳焕景；此前在昆仑万维、启元实验室、百度从事 AIGC 与大模型相关工作。</p>
-        <ul class="links-row">
-          <li><a href="mailto:codyshens@tju.edu.cn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h18v11H3z M3.5 7l8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Email</span></a></li>
-          <li><a href="https://scholar.google.com/citations?user=Pbmzy08AAAAJ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 9l10 6 10-6-10-6z M6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Scholar</span></a></li>
-          <li><a href="https://github.com/codyshen0000" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.4-4-2-6-2.5m12 4.5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>GitHub</span></a></li>
-          <li><a href="https://codyshen0000.github.io/blog/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z M14 4v5h5 M8 13h8 M8 16.5h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span><span class="en">Blog</span><span class="zh">博客</span></span></a></li>
-          <li><a href="https://codyshen0000.github.io/ai-frontier-trends/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l5-5 4 4 8-8 M15 8h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="en">AI Frontier Trends</span><span class="zh">AI 前沿趋势</span></span></a></li>
-        </ul>
-        <blockquote class="quote">
-          <p>“Art does not reproduce the visible; rather, it makes visible.”</p>
-          <footer>— Paul Klee, <cite>Creative Credo</cite>, 1920</footer>
-        </blockquote>
+    <section class="ds-hero intro" id="top">
+      <div class="ds-wrap hero-grid">
+        <div class="avatar">
+          <canvas id="field" width="176" height="176"></canvas>
+          <span class="monogram">沈</span>
+          <img src="assets/img/avatar.jpg" width="176" height="176" alt="Shen Sheng" onerror="this.remove()">
+        </div>
+        <div class="intro-text">
+          <h1 class="ds-hero-title"><span class="en">Shen Sheng <span class="alt">沈盛</span></span><span class="zh">沈盛 <span class="alt">Shen Sheng</span></span></h1>
+          <p class="ds-hero-sub role">
+            <span class="en">Hithink RoyalFlush AI Research Institute <span class="amp">&amp;</span> Postdoctoral Fellow, Zhejiang University <span class="muted">(advisor: Jiming Chen)</span></span>
+            <span class="zh">同花顺 AI 研究院 <span class="amp">&amp;</span> 浙江大学博士后 <span class="muted">（导师：陈积明）</span></span>
+          </p>
+          <p class="bio en">Current research interests: <strong>multimodal generation and editing</strong>. I received my PhD from Tianjin University in 2024, advised by Jingyu Yang and Huanjing Yue, and previously worked on AIGC and LLMs at Kunlun Tech, Qiyuan Lab and Baidu.</p>
+          <p class="bio zh">目前兴趣方向：<strong>多模态生成和编辑</strong>。2024 年博士毕业于天津大学，导师为杨敬钰、岳焕景；此前在昆仑万维、启元实验室、百度从事 AIGC 与大模型相关工作。</p>
+          <ul class="links-row ds-hero-actions">
+            <li><a class="ds-btn-ghost" href="mailto:codyshens@tju.edu.cn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h18v11H3z M3.5 7l8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Email</span></a></li>
+            <li><a class="ds-btn-ghost" href="https://scholar.google.com/citations?user=Pbmzy08AAAAJ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 9l10 6 10-6-10-6z M6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Scholar</span></a></li>
+            <li><a class="ds-btn-ghost" href="https://github.com/codyshen0000" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.4-4-2-6-2.5m12 4.5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>GitHub</span></a></li>
+            <li><a class="ds-btn-ghost" href="https://codyshen0000.github.io/blog/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z M14 4v5h5 M8 13h8 M8 16.5h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span><span class="en">Blog</span><span class="zh">博客</span></span></a></li>
+            <li><a class="ds-btn-ghost" href="https://codyshen0000.github.io/ai-frontier-trends/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l5-5 4 4 8-8 M15 8h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><span class="en">AI Frontier Trends</span><span class="zh">AI 前沿趋势</span></span></a></li>
+          </ul>
+          <blockquote class="ds-quote quote">
+            <p>“Art does not reproduce the visible; rather, it makes visible.”</p>
+            <footer>— Paul Klee, <cite>Creative Credo</cite>, 1920</footer>
+          </blockquote>
+        </div>
       </div>
     </section>
 
     <!-- NEWS -->
-    <section id="news" class="block">
-      <h2><span class="en">News</span><span class="zh">动态</span></h2>
-      <ul class="news">
-        <li><time>2025.06</time><span class="en">Joined the <strong>AI Research Institute, Hithink RoyalFlush</strong> (同花顺).</span><span class="zh">加入<strong>同花顺 AI 研究院</strong>。</span></li>
-        <li><time>2024.11</time><span class="en"><strong>ITSRN++</strong> published in <em>Displays</em> (Elsevier), vol. 86.</span><span class="zh"><strong>ITSRN++</strong> 发表于 <em>Displays</em>（Elsevier）第 86 卷。</span></li>
-        <li class="top"><time>2024.08</time><span><span class="conf">IJCAI 2024</span><span class="en"><strong>SCAB</strong> on efficient screen-content image compression, presented in Jeju.</span><span class="zh"><strong>SCAB</strong>：高效屏幕内容图像压缩（济州）。</span></span></li>
-        <li><time>2024.06</time><span class="en">PhD from Tianjin University; joined Kunlun Tech (昆仑万维).</span><span class="zh">天津大学博士毕业，加入昆仑万维。</span></li>
-        <li><time>2024.03</time><span class="en"><strong>DeeDSR</strong> released on arXiv.</span><span class="zh"><strong>DeeDSR</strong> 上线 arXiv。</span></li>
-        <li class="top"><time>2023.10</time><span><span class="conf">ICCV 2023</span><span class="en"><strong>Dec-Adapter</strong> on bridging screen-content and natural-image compression, presented in Paris.</span><span class="zh"><strong>Dec-Adapter</strong>：衔接屏幕内容与自然图像压缩（巴黎）。</span></span></li>
-        <li class="top"><time>2021.12</time><span><span class="conf">NeurIPS 2021</span><span class="en"><strong>ITSRN</strong> on continuous screen-content image super-resolution.</span><span class="zh"><strong>ITSRN</strong>：屏幕内容图像连续超分辨率。</span></span></li>
-      </ul>
+    <section id="news" class="ds-section block">
+      <div class="ds-wrap">
+        <header class="ds-section-header">
+          <h2 class="ds-section-title"><span class="en">News</span><span class="zh">动态</span></h2>
+        </header>
+        <ul class="news ds-card">
+          <li><time>2025.06</time><span class="en">Joined the <strong>AI Research Institute, Hithink RoyalFlush</strong> (同花顺).</span><span class="zh">加入<strong>同花顺 AI 研究院</strong>。</span></li>
+          <li><time>2024.11</time><span class="en"><strong>ITSRN++</strong> published in <em>Displays</em> (Elsevier), vol. 86.</span><span class="zh"><strong>ITSRN++</strong> 发表于 <em>Displays</em>（Elsevier）第 86 卷。</span></li>
+          <li class="top"><time>2024.08</time><span><span class="ds-tag conf">IJCAI 2024</span><span class="en"><strong>SCAB</strong> on efficient screen-content image compression, presented in Jeju.</span><span class="zh"><strong>SCAB</strong>：高效屏幕内容图像压缩（济州）。</span></span></li>
+          <li><time>2024.06</time><span class="en">PhD from Tianjin University; joined Kunlun Tech (昆仑万维).</span><span class="zh">天津大学博士毕业，加入昆仑万维。</span></li>
+          <li><time>2024.03</time><span class="en"><strong>DeeDSR</strong> released on arXiv.</span><span class="zh"><strong>DeeDSR</strong> 上线 arXiv。</span></li>
+          <li class="top"><time>2023.10</time><span><span class="ds-tag conf">ICCV 2023</span><span class="en"><strong>Dec-Adapter</strong> on bridging screen-content and natural-image compression, presented in Paris.</span><span class="zh"><strong>Dec-Adapter</strong>：衔接屏幕内容与自然图像压缩（巴黎）。</span></span></li>
+          <li class="top"><time>2021.12</time><span><span class="ds-tag conf">NeurIPS 2021</span><span class="en"><strong>ITSRN</strong> on continuous screen-content image super-resolution.</span><span class="zh"><strong>ITSRN</strong>：屏幕内容图像连续超分辨率。</span></span></li>
+        </ul>
+      </div>
     </section>
 
     <!-- PAPERS -->
-    <section id="papers" class="block">
-      <h2><span class="en">Publications</span><span class="zh">论文</span> <a class="h-aside" href="https://scholar.google.com/citations?user=Pbmzy08AAAAJ" target="_blank" rel="noopener"><span class="en">full list on Google Scholar</span><span class="zh">完整列表见 Google Scholar</span> ↗</a></h2>
+    <section id="papers" class="ds-section block">
+      <div class="ds-wrap">
+        <header class="ds-section-header">
+          <h2 class="ds-section-title"><span class="en">Publications</span><span class="zh">论文</span></h2>
+          <a class="ds-btn-link h-aside" href="https://scholar.google.com/citations?user=Pbmzy08AAAAJ" target="_blank" rel="noopener"><span class="en">full list on Google Scholar</span><span class="zh">完整列表见 Google Scholar</span></a>
+        </header>
 
-      <article class="pub">
-        <button class="thumb zoom" type="button" data-full="assets/img/itsrnpp.jpg" aria-label="Enlarge figure"><img src="assets/img/itsrnpp.jpg" alt="ITSRN++ visual comparison of continuous magnification up to x64.7" loading="lazy"></button>
-        <div class="pub-body">
-          <p class="venue"><span class="badge j">Displays 2025</span><span class="kind"><span class="en">Journal</span><span class="zh">期刊</span></span></p>
-          <h3>ITSRN++: Stronger and Better Implicit Transformer Network for Continuous Screen Content Image Super-Resolution</h3>
-          <p class="authors"><b>Sheng Shen</b>, Huanjing Yue, Jingyu Yang, Kun Li</p>
-          <p class="tldr"><span class="en">Arbitrary-scale screen-content super-resolution with a periodic-modulated implicit transformer, plus the SCI2K dataset.</span><span class="zh">周期调制的隐式 Transformer 实现屏幕内容任意倍率超分，并构建 SCI2K 数据集。</span></p>
-          <details>
-            <summary><span class="en">Details</span><span class="zh">详情</span></summary>
-            <p class="en">The journal extension of ITSRN. It modulates pixel features with a periodic function before the implicit transformer, so one network can upsample screen content by any ratio, and adds a dual-branch backbone mixing self-attention with depth-wise convolution to capture both sharp edges and large repeated structures. SCI2K contains 2,000 screen-content images at 2K resolution.</p>
-            <p class="zh">ITSRN 的期刊扩展版。在隐式 Transformer 之前用周期函数调制像素特征，让同一个网络按任意倍率放大屏幕内容；骨干用自注意力与深度卷积并联的双分支，同时刻画锐利边缘与大范围重复结构。SCI2K 含 2000 张 2K 分辨率的屏幕内容图像。</p>
-          </details>
-          <p class="pills"><a href="https://doi.org/10.1016/j.displa.2024.102865" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/abs/2210.08812" target="_blank" rel="noopener">arXiv</a><a href="https://github.com/codyshen0000/ITSRN" target="_blank" rel="noopener">Code</a><a href="https://1drv.ms/u/c/cb49898cd91368b0/EbBoE9mMiUkggMt-ogAAAAABo6TsRq28gdtNKHJd8BxL2g?e=UaGkge" target="_blank" rel="noopener">SCI2K</a></p>
-        </div>
-      </article>
+        <article class="pub ds-card">
+          <button class="thumb zoom" type="button" data-full="assets/img/itsrnpp.jpg" aria-label="Enlarge figure"><img src="assets/img/itsrnpp.jpg" width="464" height="290" alt="ITSRN++ visual comparison of continuous magnification up to x64.7" loading="lazy"></button>
+          <div class="pub-body">
+            <p class="venue"><span class="ds-tag badge j">Displays 2025</span><span class="kind"><span class="en">Journal</span><span class="zh">期刊</span></span></p>
+            <h3>ITSRN++: Stronger and Better Implicit Transformer Network for Continuous Screen Content Image Super-Resolution</h3>
+            <p class="authors"><b>Sheng Shen</b>, Huanjing Yue, Jingyu Yang, Kun Li</p>
+            <p class="tldr"><span class="en">Arbitrary-scale screen-content super-resolution with a periodic-modulated implicit transformer, plus the SCI2K dataset.</span><span class="zh">周期调制的隐式 Transformer 实现屏幕内容任意倍率超分，并构建 SCI2K 数据集。</span></p>
+            <details>
+              <summary><span class="en">Details</span><span class="zh">详情</span></summary>
+              <p class="en">The journal extension of ITSRN. It modulates pixel features with a periodic function before the implicit transformer, so one network can upsample screen content by any ratio, and adds a dual-branch backbone mixing self-attention with depth-wise convolution to capture both sharp edges and large repeated structures. SCI2K contains 2,000 screen-content images at 2K resolution.</p>
+              <p class="zh">ITSRN 的期刊扩展版。在隐式 Transformer 之前用周期函数调制像素特征，让同一个网络按任意倍率放大屏幕内容；骨干用自注意力与深度卷积并联的双分支，同时刻画锐利边缘与大范围重复结构。SCI2K 含 2000 张 2K 分辨率的屏幕内容图像。</p>
+            </details>
+            <p class="pills"><a class="ds-btn-link" href="https://doi.org/10.1016/j.displa.2024.102865" target="_blank" rel="noopener">Paper</a><a class="ds-btn-link" href="https://arxiv.org/abs/2210.08812" target="_blank" rel="noopener">arXiv</a><a class="ds-btn-link" href="https://github.com/codyshen0000/ITSRN" target="_blank" rel="noopener">Code</a><a class="ds-btn-link" href="https://1drv.ms/u/c/cb49898cd91368b0/EbBoE9mMiUkggMt-ogAAAAABo6TsRq28gdtNKHJd8BxL2g?e=UaGkge" target="_blank" rel="noopener">SCI2K</a></p>
+          </div>
+        </article>
 
-      <article class="pub">
-        <button class="thumb zoom" type="button" data-full="assets/img/deedsr.jpg" aria-label="Enlarge figure"><img src="assets/img/deedsr.jpg" alt="DeeDSR versus StableSR under light, medium and heavy degradation" loading="lazy"></button>
-        <div class="pub-body">
-          <p class="venue"><span class="badge p">arXiv 2024</span><span class="kind"><span class="en">Preprint</span><span class="zh">预印本</span></span></p>
-          <h3>DeeDSR: Towards Real-World Image Super-Resolution via Degradation-Aware Stable Diffusion</h3>
-          <p class="authors">Chunyang Bi, Xin Luo, <b>Sheng Shen</b>, Mengxi Zhang, Huanjing Yue, Jingyu Yang</p>
-          <p class="tldr"><span class="en">Degradation-aware representations steer Stable Diffusion for real-world super-resolution.</span><span class="zh">用“退化感知”表示引导 Stable Diffusion，做真实场景超分。</span></p>
-          <details>
-            <summary><span class="en">Details</span><span class="zh">详情</span></summary>
-            <p class="en">A text prompt says little about <em>how</em> an image was damaged, so diffusion-based restorers often return wrong semantics on severely degraded inputs. DeeDSR first learns a degradation-aware representation of the low-quality input with contrastive learning, then feeds it to Stable Diffusion together with the image.</p>
-            <p class="zh">文本提示几乎说不清图像“怎么坏的”，扩散修复模型在重度退化下常恢复出错误语义。DeeDSR 先用对比学习从低质量输入中学到退化感知表示，再与图像一起注入 Stable Diffusion。</p>
-          </details>
-          <p class="pills"><a href="https://arxiv.org/abs/2404.00661" target="_blank" rel="noopener">Paper</a><a href="https://bichunyang419.github.io/DeeDSR.github.io/" target="_blank" rel="noopener">Project</a><a href="https://github.com/bichunyang419/DeeDSR" target="_blank" rel="noopener">Code</a></p>
-        </div>
-      </article>
+        <article class="pub ds-card">
+          <button class="thumb zoom" type="button" data-full="assets/img/deedsr.jpg" aria-label="Enlarge figure"><img src="assets/img/deedsr.jpg" width="464" height="290" alt="DeeDSR versus StableSR under light, medium and heavy degradation" loading="lazy"></button>
+          <div class="pub-body">
+            <p class="venue"><span class="ds-chip badge p">arXiv 2024</span><span class="kind"><span class="en">Preprint</span><span class="zh">预印本</span></span></p>
+            <h3>DeeDSR: Towards Real-World Image Super-Resolution via Degradation-Aware Stable Diffusion</h3>
+            <p class="authors">Chunyang Bi, Xin Luo, <b>Sheng Shen</b>, Mengxi Zhang, Huanjing Yue, Jingyu Yang</p>
+            <p class="tldr"><span class="en">Degradation-aware representations steer Stable Diffusion for real-world super-resolution.</span><span class="zh">用“退化感知”表示引导 Stable Diffusion，做真实场景超分。</span></p>
+            <details>
+              <summary><span class="en">Details</span><span class="zh">详情</span></summary>
+              <p class="en">A text prompt says little about <em>how</em> an image was damaged, so diffusion-based restorers often return wrong semantics on severely degraded inputs. DeeDSR first learns a degradation-aware representation of the low-quality input with contrastive learning, then feeds it to Stable Diffusion together with the image.</p>
+              <p class="zh">文本提示几乎说不清图像“怎么坏的”，扩散修复模型在重度退化下常恢复出错误语义。DeeDSR 先用对比学习从低质量输入中学到退化感知表示，再与图像一起注入 Stable Diffusion。</p>
+            </details>
+            <p class="pills"><a class="ds-btn-link" href="https://arxiv.org/abs/2404.00661" target="_blank" rel="noopener">Paper</a><a class="ds-btn-link" href="https://bichunyang419.github.io/DeeDSR.github.io/" target="_blank" rel="noopener">Project</a><a class="ds-btn-link" href="https://github.com/bichunyang419/DeeDSR" target="_blank" rel="noopener">Code</a></p>
+          </div>
+        </article>
 
-      <article class="pub">
-        <button class="thumb zoom" type="button" data-full="assets/img/scab.jpg" aria-label="Enlarge figure"><img src="assets/img/scab.jpg" alt="Framework of the superpixel-based screen content image compression network" loading="lazy"></button>
-        <div class="pub-body">
-          <p class="venue"><span class="badge c">IJCAI 2024</span><span class="kind"><span class="en">Conference</span><span class="zh">会议</span></span></p>
-          <h3>Efficient Screen Content Image Compression via Superpixel-Based Content Aggregation and Dynamic Feature Fusion</h3>
-          <p class="authors"><b>Sheng Shen</b>, Huanjing Yue, Jingyu Yang</p>
-          <p class="tldr"><span class="en">Superpixel-based content aggregation makes learned screen-content compression efficient — the first learned codec comparable to VVC-SCC.</span><span class="zh">基于超像素的内容聚合让学习式屏幕内容压缩更高效，首个可与 VVC-SCC 相当的学习式方法。</span></p>
-          <details>
-            <summary><span class="en">Details</span><span class="zh">详情</span></summary>
-            <p class="en">Screen content has many repeated patterns that a plain convolutional codec cannot exploit, while global self-attention is too heavy. We group similar pixels into superpixels and aggregate content over them to capture non-local redundancy cheaply, and fuse features dynamically in the entropy model. It beats six learned codecs on three screen-content datasets.</p>
-            <p class="zh">屏幕内容有大量重复模式，普通卷积编码器用不上，全局自注意力又太重。我们把相似像素聚成超像素并在其上聚合内容，以很小代价利用非局部冗余，并在熵模型中做动态特征融合；在三个屏幕内容数据集上超过六种学习式编码方法。</p>
-          </details>
-          <p class="pills"><a href="https://www.ijcai.org/proceedings/2024/0134.pdf" target="_blank" rel="noopener">Paper</a></p>
-        </div>
-      </article>
+        <article class="pub ds-card">
+          <button class="thumb zoom" type="button" data-full="assets/img/scab.jpg" aria-label="Enlarge figure"><img src="assets/img/scab.jpg" width="464" height="290" alt="Framework of the superpixel-based screen content image compression network" loading="lazy"></button>
+          <div class="pub-body">
+            <p class="venue"><span class="ds-tag badge c">IJCAI 2024</span><span class="kind"><span class="en">Conference</span><span class="zh">会议</span></span></p>
+            <h3>Efficient Screen Content Image Compression via Superpixel-Based Content Aggregation and Dynamic Feature Fusion</h3>
+            <p class="authors"><b>Sheng Shen</b>, Huanjing Yue, Jingyu Yang</p>
+            <p class="tldr"><span class="en">Superpixel-based content aggregation makes learned screen-content compression efficient — the first learned codec comparable to VVC-SCC.</span><span class="zh">基于超像素的内容聚合让学习式屏幕内容压缩更高效，首个可与 VVC-SCC 相当的学习式方法。</span></p>
+            <details>
+              <summary><span class="en">Details</span><span class="zh">详情</span></summary>
+              <p class="en">Screen content has many repeated patterns that a plain convolutional codec cannot exploit, while global self-attention is too heavy. We group similar pixels into superpixels and aggregate content over them to capture non-local redundancy cheaply, and fuse features dynamically in the entropy model. It beats six learned codecs on three screen-content datasets.</p>
+              <p class="zh">屏幕内容有大量重复模式，普通卷积编码器用不上，全局自注意力又太重。我们把相似像素聚成超像素并在其上聚合内容，以很小代价利用非局部冗余，并在熵模型中做动态特征融合；在三个屏幕内容数据集上超过六种学习式编码方法。</p>
+            </details>
+            <p class="pills"><a class="ds-btn-link" href="https://www.ijcai.org/proceedings/2024/0134.pdf" target="_blank" rel="noopener">Paper</a></p>
+          </div>
+        </article>
 
-      <article class="pub">
-        <button class="thumb zoom" type="button" data-full="assets/img/dec-adapter.jpg" aria-label="Enlarge figure"><img src="assets/img/dec-adapter.jpg" alt="Four ways to attach Dec-Adapter to a ResBlock and the adapter architecture" loading="lazy"></button>
-        <div class="pub-body">
-          <p class="venue"><span class="badge c">ICCV 2023</span><span class="kind"><span class="en">Conference</span><span class="zh">会议</span></span></p>
-          <h3>Dec-Adapter: Exploring Efficient Decoder-Side Adapter for Bridging Screen Content and Natural Image Compression</h3>
-          <p class="authors"><b>Sheng Shen</b>, Huanjing Yue, Jingyu Yang</p>
-          <p class="tldr"><span class="en">A tiny decoder-side adapter lets a natural-image codec compress screen content well, at very low extra cost.</span><span class="zh">解码端的轻量适配器，以很低的额外代价让自然图像编码器高效压缩屏幕内容。</span></p>
-          <details>
-            <summary><span class="en">Details</span><span class="zh">详情</span></summary>
-            <p class="en">Dec-Adapter freezes a codec pretrained on natural images and tunes only a small depth-wise / point-wise bottleneck attached to the decoder's residual blocks; its few parameters are transmitted along with the bitstream.</p>
-            <p class="zh">冻结在自然图像上预训练的编码器，只训练挂在解码端残差块上的小型深度卷积/逐点卷积瓶颈结构，少量参数随码流一起传输。</p>
-          </details>
-          <p class="pills"><a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Shen_Dec-Adapter_Exploring_Efficient_Decoder-Side_Adapter_for_Bridging_Screen_Content_and_ICCV_2023_paper.pdf" target="_blank" rel="noopener">Paper</a></p>
-        </div>
-      </article>
+        <article class="pub ds-card">
+          <button class="thumb zoom" type="button" data-full="assets/img/dec-adapter.jpg" aria-label="Enlarge figure"><img src="assets/img/dec-adapter.jpg" width="464" height="290" alt="Four ways to attach Dec-Adapter to a ResBlock and the adapter architecture" loading="lazy"></button>
+          <div class="pub-body">
+            <p class="venue"><span class="ds-tag badge c">ICCV 2023</span><span class="kind"><span class="en">Conference</span><span class="zh">会议</span></span></p>
+            <h3>Dec-Adapter: Exploring Efficient Decoder-Side Adapter for Bridging Screen Content and Natural Image Compression</h3>
+            <p class="authors"><b>Sheng Shen</b>, Huanjing Yue, Jingyu Yang</p>
+            <p class="tldr"><span class="en">A tiny decoder-side adapter lets a natural-image codec compress screen content well, at very low extra cost.</span><span class="zh">解码端的轻量适配器，以很低的额外代价让自然图像编码器高效压缩屏幕内容。</span></p>
+            <details>
+              <summary><span class="en">Details</span><span class="zh">详情</span></summary>
+              <p class="en">Dec-Adapter freezes a codec pretrained on natural images and tunes only a small depth-wise / point-wise bottleneck attached to the decoder's residual blocks; its few parameters are transmitted along with the bitstream.</p>
+              <p class="zh">冻结在自然图像上预训练的编码器，只训练挂在解码端残差块上的小型深度卷积/逐点卷积瓶颈结构，少量参数随码流一起传输。</p>
+            </details>
+            <p class="pills"><a class="ds-btn-link" href="https://openaccess.thecvf.com/content/ICCV2023/papers/Shen_Dec-Adapter_Exploring_Efficient_Decoder-Side_Adapter_for_Bridging_Screen_Content_and_ICCV_2023_paper.pdf" target="_blank" rel="noopener">Paper</a></p>
+          </div>
+        </article>
 
-      <article class="pub">
-        <button class="thumb zoom" type="button" data-full="assets/img/itsrn.jpg" aria-label="Enlarge figure"><img src="assets/img/itsrn.jpg" alt="ITSRN versus Bicubic, MetaSR and LIIF at continuous magnifications" loading="lazy"></button>
-        <div class="pub-body">
-          <p class="venue"><span class="badge c">NeurIPS 2021</span><span class="kind"><span class="en">Conference</span><span class="zh">会议</span></span></p>
-          <h3>Implicit Transformer Network for Screen Content Image Continuous Super-Resolution</h3>
-          <p class="authors">Jingyu Yang, <b>Sheng Shen</b>, Huanjing Yue, Kun Li</p>
-          <p class="tldr"><span class="en">An implicit transformer that upsamples screen content by any ratio while keeping thin edges sharp.</span><span class="zh">隐式 Transformer 以任意倍率放大屏幕内容，同时保持细线边缘锐利。</span></p>
-          <details>
-            <summary><span class="en">Details</span><span class="zh">详情</span></summary>
-            <p class="en">Low- and high-resolution pixel coordinates act as the key and query of a transformer; from the coordinates alone the network predicts the weights that turn neighbouring features into a pixel, avoiding the smoothing of shared convolution filters.</p>
-            <p class="zh">把低分辨率与高分辨率像素坐标分别作为 Transformer 的 key 与 query，只靠坐标预测把邻近特征变换成像素的权重，避免了共享卷积核带来的平滑。</p>
-          </details>
-          <p class="pills"><a href="https://proceedings.neurips.cc/paper/2021/file/6e7d5d259be7bf56ed79029c4e621f44-Paper.pdf" target="_blank" rel="noopener">Paper</a><a href="https://github.com/codyshen0000/ITSRN" target="_blank" rel="noopener">Code</a></p>
-        </div>
-      </article>
+        <article class="pub ds-card">
+          <button class="thumb zoom" type="button" data-full="assets/img/itsrn.jpg" aria-label="Enlarge figure"><img src="assets/img/itsrn.jpg" width="464" height="290" alt="ITSRN versus Bicubic, MetaSR and LIIF at continuous magnifications" loading="lazy"></button>
+          <div class="pub-body">
+            <p class="venue"><span class="ds-tag badge c">NeurIPS 2021</span><span class="kind"><span class="en">Conference</span><span class="zh">会议</span></span></p>
+            <h3>Implicit Transformer Network for Screen Content Image Continuous Super-Resolution</h3>
+            <p class="authors">Jingyu Yang, <b>Sheng Shen</b>, Huanjing Yue, Kun Li</p>
+            <p class="tldr"><span class="en">An implicit transformer that upsamples screen content by any ratio while keeping thin edges sharp.</span><span class="zh">隐式 Transformer 以任意倍率放大屏幕内容，同时保持细线边缘锐利。</span></p>
+            <details>
+              <summary><span class="en">Details</span><span class="zh">详情</span></summary>
+              <p class="en">Low- and high-resolution pixel coordinates act as the key and query of a transformer; from the coordinates alone the network predicts the weights that turn neighbouring features into a pixel, avoiding the smoothing of shared convolution filters.</p>
+              <p class="zh">把低分辨率与高分辨率像素坐标分别作为 Transformer 的 key 与 query，只靠坐标预测把邻近特征变换成像素的权重，避免了共享卷积核带来的平滑。</p>
+            </details>
+            <p class="pills"><a class="ds-btn-link" href="https://proceedings.neurips.cc/paper/2021/file/6e7d5d259be7bf56ed79029c4e621f44-Paper.pdf" target="_blank" rel="noopener">Paper</a><a class="ds-btn-link" href="https://github.com/codyshen0000/ITSRN" target="_blank" rel="noopener">Code</a></p>
+          </div>
+        </article>
 
-      <article class="pub">
-        <button class="thumb zoom" type="button" data-full="assets/img/pcanet.jpg" aria-label="Enlarge figure"><img src="assets/img/pcanet.jpg" alt="Framework of PCANet" loading="lazy"></button>
-        <div class="pub-body">
-          <p class="venue"><span class="badge j">JCST 2020</span><span class="kind"><span class="en">Journal</span><span class="zh">期刊</span></span></p>
-          <h3>Reference Image Guided Super-Resolution via Progressive Channel Attention Networks</h3>
-          <p class="authors">Huan-Jing Yue, <b>Sheng Shen</b>, Jing-Yu Yang, Hao-Feng Hu, Yan-Fang Chen</p>
-          <p class="tldr"><span class="en">Matched patches from a high-resolution reference photo guide progressive, attention-based upsampling.</span><span class="zh">用高分辨率参考图中匹配到的图块，引导基于注意力的渐进式上采样。</span></p>
-          <details>
-            <summary><span class="en">Details</span><span class="zh">详情</span></summary>
-            <p class="en">Patches are matched between the low-resolution input and a reference of the same scene; the network then upsamples ×2 per level, feeding matched reference patches into each level, with channel attention computed from a learned weighted pooling.</p>
-            <p class="zh">先在低分辨率输入与同场景参考图之间做图块匹配，再逐级 ×2 上采样，并把匹配到的参考图块送入每一级；通道注意力的权重来自可学习的加权池化。</p>
-          </details>
-          <p class="pills"><a href="https://jcst.ict.ac.cn/fileup/1000-9000/PDF/2020-3-6-0270.pdf" target="_blank" rel="noopener">Paper</a></p>
-        </div>
-      </article>
+        <article class="pub ds-card">
+          <button class="thumb zoom" type="button" data-full="assets/img/pcanet.jpg" aria-label="Enlarge figure"><img src="assets/img/pcanet.jpg" width="464" height="290" alt="Framework of PCANet" loading="lazy"></button>
+          <div class="pub-body">
+            <p class="venue"><span class="ds-tag badge j">JCST 2020</span><span class="kind"><span class="en">Journal</span><span class="zh">期刊</span></span></p>
+            <h3>Reference Image Guided Super-Resolution via Progressive Channel Attention Networks</h3>
+            <p class="authors">Huan-Jing Yue, <b>Sheng Shen</b>, Jing-Yu Yang, Hao-Feng Hu, Yan-Fang Chen</p>
+            <p class="tldr"><span class="en">Matched patches from a high-resolution reference photo guide progressive, attention-based upsampling.</span><span class="zh">用高分辨率参考图中匹配到的图块，引导基于注意力的渐进式上采样。</span></p>
+            <details>
+              <summary><span class="en">Details</span><span class="zh">详情</span></summary>
+              <p class="en">Patches are matched between the low-resolution input and a reference of the same scene; the network then upsamples ×2 per level, feeding matched reference patches into each level, with channel attention computed from a learned weighted pooling.</p>
+              <p class="zh">先在低分辨率输入与同场景参考图之间做图块匹配，再逐级 ×2 上采样，并把匹配到的参考图块送入每一级；通道注意力的权重来自可学习的加权池化。</p>
+            </details>
+            <p class="pills"><a class="ds-btn-link" href="https://jcst.ict.ac.cn/fileup/1000-9000/PDF/2020-3-6-0270.pdf" target="_blank" rel="noopener">Paper</a></p>
+          </div>
+        </article>
+      </div>
     </section>
 
     <!-- EXPERIENCE + EDUCATION -->
-    <section id="experience" class="block">
-      <h2><span class="en">Experience</span><span class="zh">经历</span></h2>
-      <div class="cols">
-        <div>
-          <h3 class="col-h"><span class="en">Work</span><span class="zh">工作</span></h3>
-          <ol class="tl">
-            <li><div><h4><span class="en">AI Research Institute, Hithink RoyalFlush</span><span class="zh">同花顺 AI 研究院</span></h4><p><span class="en">Multimodal generation and editing.</span><span class="zh">多模态生成与编辑。</span></p></div><time>2025.06 – <span class="en">now</span><span class="zh">至今</span></time></li>
-            <li><div><h4><span class="en">Kunlun Tech · Tiangong AIstory</span><span class="zh">昆仑万维 · 天工 AIstory</span></h4><p><span class="en">AIGC for image and story generation.</span><span class="zh">面向图像与故事生成的 AIGC。</span></p></div><time>2024.06 – 2025.06</time></li>
-            <li><div><h4><span class="en">Qiyuan Lab</span><span class="zh">启元实验室</span> <span class="tag"><span class="en">intern</span><span class="zh">实习</span></span></h4><p><span class="en">Zhiyuan Liu's team · LLM training and inference.</span><span class="zh">刘知远团队 · 大语言模型训练与推理。</span></p></div><time>2023.12 – 2024.03</time></li>
-            <li><div><h4><span class="en">Baidu</span><span class="zh">百度</span> <span class="tag"><span class="en">intern</span><span class="zh">实习</span></span></h4><p><span class="en">Customized text-to-image generation.</span><span class="zh">定制化文生图。</span></p></div><time>2023.09 – 2023.11</time></li>
-          </ol>
-        </div>
-        <div>
-          <h3 class="col-h"><span class="en">Education</span><span class="zh">教育</span></h3>
-          <ol class="tl">
-            <li><div><h4><span class="en">PhD, Tianjin University</span><span class="zh">天津大学 · 博士</span></h4><p><span class="en">Electrical Automation and Information Engineering · advisors Jingyu Yang, Huanjing Yue</span><span class="zh">电气自动化与信息工程学院 · 导师 杨敬钰、岳焕景</span></p></div><time>2020 – 2024.06</time></li>
-            <li><div><h4><span class="en">Master's, Tianjin University</span><span class="zh">天津大学 · 硕士</span></h4><p><span class="en">Electrical Automation and Information Engineering · advisors Jingyu Yang, Huanjing Yue</span><span class="zh">电气自动化与信息工程学院 · 导师 杨敬钰、岳焕景</span></p></div><time>2018 – 2020</time></li>
-            <li><div><h4><span class="en">Bachelor's, Hefei University of Technology</span><span class="zh">合肥工业大学 · 本科</span></h4><p><span class="en">Department of Information Engineering · advisor Shijie Hao</span><span class="zh">信息工程系 · 导师 郝世杰</span></p></div><time>2014 – 2018</time></li>
-          </ol>
-          <h3 class="col-h"><span class="en">Service</span><span class="zh">学术服务</span></h3>
-          <p class="service"><span class="en">Reviewer for</span><span class="zh">审稿人：</span> ICCV · NeurIPS · AAAI · TCSVT · SCIS</p>
+    <section id="experience" class="ds-section block">
+      <div class="ds-wrap">
+        <header class="ds-section-header">
+          <h2 class="ds-section-title"><span class="en">Experience</span><span class="zh">经历</span></h2>
+        </header>
+        <div class="cols">
+          <div class="ds-card">
+            <h3 class="col-h"><span class="en">Work</span><span class="zh">工作</span></h3>
+            <ol class="tl">
+              <li><div><h4><span class="en">AI Research Institute, Hithink RoyalFlush</span><span class="zh">同花顺 AI 研究院</span></h4><p><span class="en">Multimodal generation and editing.</span><span class="zh">多模态生成与编辑。</span></p></div><time>2025.06 – <span class="en">now</span><span class="zh">至今</span></time></li>
+              <li><div><h4><span class="en">Kunlun Tech · Tiangong AIstory</span><span class="zh">昆仑万维 · 天工 AIstory</span></h4><p><span class="en">AIGC for image and story generation.</span><span class="zh">面向图像与故事生成的 AIGC。</span></p></div><time>2024.06 – 2025.06</time></li>
+              <li><div><h4><span class="en">Qiyuan Lab</span><span class="zh">启元实验室</span> <span class="ds-tag-outline tag"><span class="en">intern</span><span class="zh">实习</span></span></h4><p><span class="en">Zhiyuan Liu's team · LLM training and inference.</span><span class="zh">刘知远团队 · 大语言模型训练与推理。</span></p></div><time>2023.12 – 2024.03</time></li>
+              <li><div><h4><span class="en">Baidu</span><span class="zh">百度</span> <span class="ds-tag-outline tag"><span class="en">intern</span><span class="zh">实习</span></span></h4><p><span class="en">Customized text-to-image generation.</span><span class="zh">定制化文生图。</span></p></div><time>2023.09 – 2023.11</time></li>
+            </ol>
+          </div>
+          <div class="ds-card">
+            <h3 class="col-h"><span class="en">Education</span><span class="zh">教育</span></h3>
+            <ol class="tl">
+              <li><div><h4><span class="en">PhD, Tianjin University</span><span class="zh">天津大学 · 博士</span></h4><p><span class="en">Electrical Automation and Information Engineering · advisors Jingyu Yang, Huanjing Yue</span><span class="zh">电气自动化与信息工程学院 · 导师 杨敬钰、岳焕景</span></p></div><time>2020 – 2024.06</time></li>
+              <li><div><h4><span class="en">Master's, Tianjin University</span><span class="zh">天津大学 · 硕士</span></h4><p><span class="en">Electrical Automation and Information Engineering · advisors Jingyu Yang, Huanjing Yue</span><span class="zh">电气自动化与信息工程学院 · 导师 杨敬钰、岳焕景</span></p></div><time>2018 – 2020</time></li>
+              <li><div><h4><span class="en">Bachelor's, Hefei University of Technology</span><span class="zh">合肥工业大学 · 本科</span></h4><p><span class="en">Department of Information Engineering · advisor Shijie Hao</span><span class="zh">信息工程系 · 导师 郝世杰</span></p></div><time>2014 – 2018</time></li>
+            </ol>
+            <h3 class="col-h"><span class="en">Service</span><span class="zh">学术服务</span></h3>
+            <p class="service"><span class="en">Reviewer for</span><span class="zh">审稿人：</span> ICCV · NeurIPS · AAAI · TCSVT · SCIS</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- VISITORS (hidden unless the data backend answers) -->
-    <section id="visitors" class="block" hidden>
-      <h2><span class="en">Visitors</span><span class="zh">访客</span></h2>
-      <p class="muted"><span class="en">Total visits:</span><span class="zh">累计访问：</span> <strong id="total-visits">…</strong></p>
-      <p class="muted v-sum"><span class="en">From <strong class="v-c">0</strong> countries/regions, <strong class="v-t">0</strong> cities.</span><span class="zh">来自 <strong class="v-c">0</strong> 个国家/地区、<strong class="v-t">0</strong> 座城市。</span></p>
-      <div id="map" role="img" aria-label="Map of visitor locations"></div>
+    <section id="visitors" class="ds-section block" hidden>
+      <div class="ds-wrap">
+        <header class="ds-section-header">
+          <h2 class="ds-section-title"><span class="en">Visitors</span><span class="zh">访客</span></h2>
+        </header>
+        <p class="ds-muted"><span class="en">Total visits:</span><span class="zh">累计访问：</span> <strong id="total-visits">…</strong></p>
+        <p class="ds-muted v-sum"><span class="en">From <strong class="v-c">0</strong> countries/regions, <strong class="v-t">0</strong> cities.</span><span class="zh">来自 <strong class="v-c">0</strong> 个国家/地区、<strong class="v-t">0</strong> 座城市。</span></p>
+        <div id="map" role="img" aria-label="Map of visitor locations"></div>
+      </div>
     </section>
   </main>
 
-  <footer class="foot" id="contact">
-    <div class="wrap foot-inner">
+  <footer class="ds-footer foot" id="contact">
+    <div class="ds-wrap ds-footer-inner">
       <p><span class="en">If you work on generation or editing and want to compare notes —</span><span class="zh">如果你也做生成或编辑，想交流一下——</span> <a href="mailto:codyshens@tju.edu.cn">codyshens@tju.edu.cn</a></p>
-      <p class="muted">© <span id="year">2026</span> Shen Sheng</p>
+      <p class="ds-muted">© <span id="year">2026</span> Shen Sheng</p>
     </div>
   </footer>
 

@@ -23,7 +23,21 @@
 
   /* ---- nav: border on scroll, brand appears once the intro name scrolls away, section spy ---- */
   var nav = document.getElementById('nav');
+  var menu = document.getElementById('menu');
   var h1 = document.querySelector('.intro h1');
+  function setMenu(open) {
+    nav.classList.toggle('is-open', open);
+    if (menu) menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  if (menu) {
+    menu.addEventListener('click', function () { setMenu(!nav.classList.contains('is-open')); });
+    nav.querySelectorAll('.ds-nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () { setMenu(false); });
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 734) setMenu(false);
+    });
+  }
   function onScroll() {
     nav.classList.toggle('scrolled', window.scrollY > 8);
     nav.classList.toggle('show-brand', h1.getBoundingClientRect().bottom < 56);
